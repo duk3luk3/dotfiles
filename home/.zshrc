@@ -54,10 +54,12 @@ command_not_found_handler () {
 }
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+#bindkey -e
+# nope
+bindkey -v
 
 # change directories using directory names only
-setopt auto_cd
+unsetopt auto_cd
 # push directory onto stack automatically on "cd"
 setopt auto_pushd
 # extended globbing
@@ -76,8 +78,8 @@ setopt complete_in_word
 setopt nohup
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # write history immediatly after commands
@@ -114,7 +116,7 @@ alias rm='nocorrect rm'
 alias cd=' cd'
 
 # colors
-alias ls=' ls --color=auto'
+alias ls=' ls -a --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
@@ -248,3 +250,34 @@ prompt_gentoo_setup () {
 }
 
 prompt_gentoo_setup "$@"
+
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+alias rdesktop="rdesktop -a 16 -g 1920x1200"
+
+while test -n "$(find $HOME -maxdepth 1 -name '.ssh-agent-lock*' -print -quit)" ; do
+	sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
+done
+locknum=$RANDOM
+touch "$HOME/.ssh-agent-lock$locknum"
+pgrep ssh-agent > /dev/null
+if [[ $? != 0  ]]; then
+	setopt clobber
+	ssh-agent > $HOME/.ssh-agent-thing
+	eval $(<$HOME/.ssh-agent-thing)
+	setopt noclobber
+elif [[ "$SSH_AGENT_PID" == "" ]]; then
+	echo "ssh-agent running but env not set, evaling ssh-agent-thing"
+	eval $(<$HOME/.ssh-agent-thing)
+else
+	echo "Cached SSH Agent PID: $SSH_AGENT_PID"
+fi
+rm "$HOME/.ssh-agent-lock$locknum"
+
+source "$HOME/.zshrc.local"
+
+ssh-add -l >/dev/null </dev/null || alias ssh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; ssh'
+
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+export PATH="$HOME/bin/ApacheDirectoryStudio:$HOME/nashome/bin:$PATH"
+export LD_PRELOAD="/home/erlacher/nashome/repos/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"

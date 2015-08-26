@@ -114,6 +114,10 @@ inoremap # #
 " always display airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+	  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 
 " some useful settings for C
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
@@ -165,8 +169,8 @@ set background=dark
 colorscheme wombat256mod
 
 " highlight unwanted spaces
-"highlight UnwantedSpaces ctermbg=red guibg=red
-"match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+highlight UnwantedSpaces ctermbg=red guibg=red
+match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
 
 " disable persistance in YankRing. I do not care about old ring contents
 let g:yankring_persist = 0
