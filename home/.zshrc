@@ -17,6 +17,24 @@ then
   export EDITOR=vimx
 fi
 
+add-zsh-hook precmd precmd_title
+
+settitle() {
+    printf "\033k$1\033\\"
+}
+
+precmd_title() {
+    settitle $HOST
+}
+
+
+ssh() {
+    if [ -n "$TMUX" ]; then
+        tmux rename-window -t${TMUX_PANE} "${@: -1}"
+    fi
+    command ssh "$@"
+}
+
 # anonymous function to be executed on start and avoid polluting namespace
 function () {
   # colourful less by emulating less in vim
@@ -254,6 +272,7 @@ prompt_gentoo_setup "$@"
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 alias rdesktop="rdesktop -a 16 -g 1920x1200"
 
+sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
 while test -n "$(find $HOME -maxdepth 1 -name '.ssh-agent-lock*' -print -quit)" ; do
 	sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
 done
@@ -279,5 +298,9 @@ ssh-add -l >/dev/null </dev/null || alias ssh='ssh-add -l >/dev/null </dev/null 
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-export PATH="$HOME/bin/ApacheDirectoryStudio:$HOME/nashome/bin:$PATH"
+export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nashome/bin"
 export LD_PRELOAD="/home/erlacher/nashome/repos/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+alias synon="sudo systemctl start synergys@erlacher"
+alias synoff="sudo systemctl stop synergys@erlacher"
+alias synstat="sudo systemctl status synergys@erlacher"

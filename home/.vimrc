@@ -11,7 +11,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/Gundo'
@@ -141,6 +141,7 @@ autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
+autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
 " enable rainbow parens
 "autocmd VimEnter * RainbowParenthesesToggleAll
 "autocmd Syntax * RainbowParenthesesLoadRound
