@@ -304,3 +304,4 @@ export LD_PRELOAD="/home/erlacher/nasbackup/home/repos/stderred/build/libstderre
 alias synon="sudo systemctl start synergys@erlacher"
 alias synoff="sudo systemctl stop synergys@erlacher"
 alias synstat="sudo systemctl status synergys@erlacher"
+alias pwssh="ssh -o 'PubkeyAuthentication no'"

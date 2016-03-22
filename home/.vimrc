@@ -31,11 +31,11 @@ Plugin 'coot/EnchantedVim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 
-" language bundles
+"" language bundles
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+"Plugin 'guns/vim-sexp'
+"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'xhr/vim-io'
 Plugin 'Leonidas-from-XIV/vim-coffee-script'
 
@@ -141,7 +141,7 @@ autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
-autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 " enable rainbow parens
 "autocmd VimEnter * RainbowParenthesesToggleAll
 "autocmd Syntax * RainbowParenthesesLoadRound
@@ -171,7 +171,7 @@ colorscheme wombat256mod
 
 " highlight unwanted spaces
 highlight UnwantedSpaces ctermbg=red guibg=red
-match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+match UnwantedSpaces /\s\+$\| \t\|\t /
 
 " disable persistance in YankRing. I do not care about old ring contents
 let g:yankring_persist = 0
@@ -185,6 +185,8 @@ let g:yankring_replace_n_nkey = '<C-J>'
 
 " Some forms that should be specially indented
 set lispwords+=parameterize
+
+set cm=zip
 
 " characters to use for :set list
 set list
