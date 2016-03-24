@@ -295,11 +295,12 @@ rm "$HOME/.ssh-agent-lock$locknum"
 source "$HOME/.zshrc.local"
 
 ssh-add -l >/dev/null </dev/null || alias ssh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; ssh'
+ssh-add -l >/dev/null </dev/null || alias mosh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; mosh'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nasbackup/home/bin"
-export LD_PRELOAD="/home/erlacher/nasbackup/home/repos/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+#export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nasbackup/home/bin"
+export LD_PRELOAD="/home/luke/git/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 
 alias synon="sudo systemctl start synergys@erlacher"
 alias synoff="sudo systemctl stop synergys@erlacher"

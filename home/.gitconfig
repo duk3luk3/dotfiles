@@ -1,7 +1,6 @@
 [user]
-	name = Marek Kubica
-	email = marek@xivilization.net
-	signingkey = 575982D187A6E2C5
+	name = Lukas Erlacher
+	email = erlacher@in.tum.de
 [color]
 	branch = auto
 	diff = auto
@@ -27,4 +26,4 @@
 	default = current
 	followTags = true
 [github]
-	user = Leonidas-from-XIV
+	user = duk3luk3
