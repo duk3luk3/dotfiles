@@ -1,1 +1,13 @@
-/home/erlacher/.homesick/repos/backup_castle/home/.XCompose
+<Multi_key> <a> <a>	: "ä"
+<Multi_key> <u> <u>	: "ü
+<Multi_key> <o> <o>	: "ö"
+<Multi_key> <A> <A>	: "Ä"
+<Multi_key> <U> <U>	: "Ü"
+<Multi_key> <O> <O>	: "Ö"
+<Multi_key> <s> <s>	: "ß"
+<Multi_key> <apostrophe>	: "ä"
+<Multi_key> <bracketleft>	: "ü"
+<Multi_key> <semicolon>	: "ö"
+<Multi_key> <quotedbl>	: "Ä"
+<Multi_key> <braceleft>	: "Ü"
+<Multi_key> <colon>	: "Ö"
