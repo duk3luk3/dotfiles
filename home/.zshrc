@@ -272,26 +272,28 @@ prompt_gentoo_setup "$@"
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 alias rdesktop="rdesktop -a 16 -g 1920x1200"
 
-sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
-while test -n "$(find $HOME -maxdepth 1 -name '.ssh-agent-lock*' -print -quit)" ; do
+ssh-add -l > /dev/null </dev/null
+if [[ $? != 0 ]]; then
 	sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
-done
-locknum=$RANDOM
-touch "$HOME/.ssh-agent-lock$locknum"
-pgrep ssh-agent > /dev/null
-if [[ $? != 0  ]]; then
-	setopt clobber
-	ssh-agent > $HOME/.ssh-agent-thing
-	eval $(<$HOME/.ssh-agent-thing)
-	setopt noclobber
-elif [[ "$SSH_AGENT_PID" == "" ]]; then
-	echo "ssh-agent running but env not set, evaling ssh-agent-thing"
-	eval $(<$HOME/.ssh-agent-thing)
-else
-	echo "Cached SSH Agent PID: $SSH_AGENT_PID"
+	while test -n "$(find $HOME -maxdepth 1 -name '.ssh-agent-lock*' -print -quit)" ; do
+		sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
+	done
+	locknum=$RANDOM
+	touch "$HOME/.ssh-agent-lock$locknum"
+	pgrep ssh-agent > /dev/null
+	if [[ $? != 0  ]]; then
+		setopt clobber
+		ssh-agent > $HOME/.ssh-agent-thing
+		eval $(<$HOME/.ssh-agent-thing)
+		setopt noclobber
+	elif [[ "$SSH_AGENT_PID" == "" ]]; then
+		echo "ssh-agent running but env not set, evaling ssh-agent-thing"
+		eval $(<$HOME/.ssh-agent-thing)
+	else
+		echo "Cached SSH Agent PID: $SSH_AGENT_PID"
+	fi
+	rm "$HOME/.ssh-agent-lock$locknum"
 fi
-rm "$HOME/.ssh-agent-lock$locknum"
-
 source "$HOME/.zshrc.local"
 
 ssh-add -l >/dev/null </dev/null || alias ssh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; ssh'
