@@ -295,16 +295,16 @@ if [[ $? != 0 ]]; then
 	rm "$HOME/.ssh-agent-lock$locknum"
 fi
 source "$HOME/.zshrc.local"
+source "$HOME/.zshrc.special"
 
 ssh-add -l >/dev/null </dev/null || alias ssh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; ssh'
 ssh-add -l >/dev/null </dev/null || alias mosh='ssh-add -l >/dev/null </dev/null || ssh-add </dev/null && unalias ssh; mosh'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-#export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nasbackup/home/bin"
-export LD_PRELOAD="/home/luke/git/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nasbackup/home/bin"
 
-alias synon="sudo systemctl start synergys@erlacher"
+alias synon="/home/erlacher/.screenlayout/default.sh; sudo systemctl start synergys@erlacher"
 alias synoff="sudo systemctl stop synergys@erlacher"
 alias synstat="sudo systemctl status synergys@erlacher"
 alias pwssh="ssh -o 'PubkeyAuthentication no'"
