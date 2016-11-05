@@ -4,13 +4,29 @@
 URxvt.iconFile:             /usr/share/icons/breeze/apps/software/yakuake.svg
 !URxvt.font:                 xft:Source Code Pro:size=10,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,xft:Powerline Symbols,xft:Symbola
 !URxvt*font: xft:Monospace:pixelsize=12,xft:Powerline Symbols,xft:Symbola,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
-URxvt*font: xft:Inconsolata:size=12,xft:PowerlineSymbols,xft:Symbola,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: xft:Inconsolata:size=12,xft:PowerlineSymbols,xft:Symbola,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 !urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
 
 URxvt.letterSpace: -1
 
 !URxvt.font: xft:inconsolata:size=13,\
 !            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+
+Xft.antialias:    rgba
+Xft.dpi:    96
+Xft.rgba:    rgb
+Xft.hinting:    true
+Xft.hintstyle:    hintslight
+URxvt.xftAntialias: true
+!URxvt.font:           xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.boldFont:       xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.italicFont:     xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.bolditalicFont: xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+
+URxvt.font:           xft:Inconsolata for Powerline:size=12:antialias=false:hinting=true
+URxvt.boldFont:       xft:Inconsolata for Powerline:size=12:antialias=false:hinting=true
+URxvt.italicFont:     xft:Inconsolata for Powerline:size=12:antialias=false:hinting=true
+URxvt.bolditalicFont: xft:Inconsolata for Powerline:size=12:antialias=false:hinting=true
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,tabbedex,vtwheel
 URxvt.url-select.launcher:  firefox
@@ -100,7 +116,6 @@ URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0000/dddd
 
 Xft.lcdfilter: ldcdefault
-Xft.hintstyle: hintslight
 
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
