@@ -11,3 +11,4 @@
 <Multi_key> <quotedbl>	: "Ä"
 <Multi_key> <braceleft>	: "Ü"
 <Multi_key> <colon>	: "Ö"
+<Multi_key> <e>: "€"
