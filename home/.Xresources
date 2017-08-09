@@ -21,9 +21,9 @@ URxvt.xftAntialias: true
 
 URxvt.letterSpace: -1
 URxvt.font:           xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
-URxvt.boldFont:       xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
-URxvt.italicFont:     xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
-URxvt.bolditalicFont: xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.boldFont:       xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.italicFont:     xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
+!URxvt.bolditalicFont: xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=true:hinting=true
 
 !URxvt.letterSpace: -1
 !URxvt.font:           xft:Inconsolata for Powerline:size=12:antialias=false:hinting=true
@@ -33,6 +33,33 @@ URxvt.bolditalicFont: xft:DejaVu Sans Mono for Powerline:pixelsize=13:antialias=
 
 !URxvt.letterSpace: -2
 !urxvt*font: xft:Terminus:pixelsize=12:hinting=true,xft:Inconsolata\ for\ Powerline:pixelsize=12
+
+!URxvt.letterSpace: -1
+
+!Broken:
+!!URxvt.font:           xft:Anonymice Powerline:size=13:antialias=false:hinting=true
+!!URxvt.font:           xft:Arimo Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Cousine Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Hack:size=13:antialias=true:hinting=true,xft:Droid Sans Mono for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Inconsolata for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Inconsolata-dz for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Inconsolata-g for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Meslo for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Sauce Code Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Symbol Neu Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Monofur for Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Tinos Powerline:size=13:antialias=true:hinting=true
+!!URxvt.font:           xft:Fura Powerline:size=13:antialias=true:hinting=true
+
+!Not broken:
+!URxvt.font:           xft:DejaVu Sans Mono for Powerline:size=13:antialias=true:hinting=true
+!URxvt.font:           xft:Droid Sans Mono for Powerline:size=13:antialias=true:hinting=true
+!URxvt.font:           xft:Droid Sans Mono Slashed for Powerline:size=13:antialias=true:hinting=true
+!URxvt.font:           xft:Droid Sans Mono Dotted for Powerline:size=13:antialias=true:hinting=true
+!URxvt.font:           xft:Literation Mono Powerline:size=13:antialias=true:hinting=true
+!URxvt.font:           xft:Terminess Powerline:size=12:antialias=true:hinting=true
+!URxvt.font:           xft:Ubuntu Mono derivative Powerline:size=13:antialias=true:hinting=true
+
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,tabbedex,vtwheel
 URxvt.url-select.launcher:  firefox

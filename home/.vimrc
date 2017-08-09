@@ -142,6 +142,8 @@ autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType haskell setlocal expandtab shiftwidth=8 softtabstop=8 autoindent
 " enable rainbow parens
 "autocmd VimEnter * RainbowParenthesesToggleAll
 "autocmd Syntax * RainbowParenthesesLoadRound
@@ -218,3 +220,7 @@ vmap <C-Down> ]egv
 " auto-reload .vimrc & _vimrc after editing
 " http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
 autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
+
+" http://stackoverflow.com/a/13731714
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27

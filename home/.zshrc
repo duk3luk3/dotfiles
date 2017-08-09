@@ -51,7 +51,7 @@ fi
 # if OPAM is installed, load it.
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-CABAL_LOCATION=~/.cabal/bin
+CABAL_LOCATION=/home/luke/.local/bin/
 if [ -d $CABAL_LOCATION ]
 then
   PATH=$CABAL_LOCATION:$PATH
@@ -306,3 +306,6 @@ alias synon="/home/erlacher/.screenlayout/default.sh; sudo systemctl start syner
 alias synoff="sudo systemctl stop synergys@erlacher"
 alias synstat="sudo systemctl status synergys@erlacher"
 alias pwssh="ssh -o 'PubkeyAuthentication no'"
+
+# added by travis gem
+[ -f /home/luke/.travis/travis.sh ] && source /home/luke/.travis/travis.sh
