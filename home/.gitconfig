@@ -1,6 +1,6 @@
 [user]
 	name = Lukas Erlacher
-	email = l.erlacher@googlemail.com
+	email = erlacher@in.tum.de
 [color]
 	branch = auto
 	diff = auto
@@ -27,3 +27,11 @@
 	followTags = true
 [github]
 	user = duk3luk3
+[merge]
+	tool = diffconflicts
+	conflictstyle = diff3
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+[mergetool]
+	keepBackup = false

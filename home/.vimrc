@@ -19,9 +19,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/gitignore'
+Plugin 'duk3luk3/gitignore'
 Plugin 'vim-scripts/YankRing.vim'
 Bundle 'majutsushi/tagbar'
+
+Plugin 'saltstack/salt-vim'
 
 " Permanent very magic mode
 Plugin 'coot/CRDispatcher'
@@ -46,6 +48,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/wombat256.vim'
 Plugin 'MnO2/vim-ocaml-conceal'
 Plugin 'enomsg/vim-haskellConcealPlus'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -142,8 +145,12 @@ autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType php setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType haskell setlocal expandtab shiftwidth=8 softtabstop=8 autoindent
+autocmd FileType cpp setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType htmldjango setlocal expandtab shiftwidth=4 softtabstop=4
 " enable rainbow parens
 "autocmd VimEnter * RainbowParenthesesToggleAll
 "autocmd Syntax * RainbowParenthesesLoadRound

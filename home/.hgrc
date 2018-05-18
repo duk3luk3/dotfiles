@@ -8,6 +8,7 @@ git = True
 mq =
 rebase =
 color =
+pager =
 
 [trusted]
 user = root

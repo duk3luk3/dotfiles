@@ -8,6 +8,9 @@ URxvt.iconFile:             /usr/share/icons/breeze/apps/software/yakuake.svg
 !urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
 
 !URxvt.letterSpace: -1
+!URxvt.font:                 xft:Source Code Pro:size=12,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,xft:Powerline Symbols,xft:Symbola
+URxvt.font:                 xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+URxvt.letterSpace: -1
 
 !URxvt.font: xft:inconsolata:size=13,\
 !            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*

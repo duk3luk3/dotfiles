@@ -94,6 +94,8 @@ setopt hash_list_all
 setopt complete_in_word
 # don't kill background jobs at shell exit
 setopt nohup
+# always newline (avoids clobbering output that is not terminated by newline)
+setopt prompt_sp
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
@@ -130,8 +132,6 @@ alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
-# prefix with space to exclude from history (hist_ignore_space)
-alias cd=' cd'
 
 # colors
 alias ls=' ls -a --color=auto'
@@ -270,7 +270,7 @@ prompt_gentoo_setup () {
 prompt_gentoo_setup "$@"
 
 export SSH_ASKPASS=/usr/bin/ksshaskpass
-alias rdesktop="rdesktop -a 16 -g 1920x1200"
+alias rdesktop="rdesktop -a 16 -g 1920x1000"
 
 ssh-add -l > /dev/null </dev/null
 if [[ $? != 0 ]]; then
@@ -303,9 +303,14 @@ ssh-add -l >/dev/null </dev/null || alias mosh='ssh-add -l >/dev/null </dev/null
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 alias synon="/home/erlacher/.screenlayout/default.sh; sudo systemctl start synergys@erlacher"
+#export PATH="$PATH:$HOME/bin/ApacheDirectoryStudio:$HOME/nasbackup/home/bin"
+export LD_PRELOAD="/home/erlacher/scratch/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 alias synoff="sudo systemctl stop synergys@erlacher"
 alias synstat="sudo systemctl status synergys@erlacher"
 alias pwssh="ssh -o 'PubkeyAuthentication no'"
+
+#npm
+export PATH=~/.npm-global/bin:$PATH
 
 # added by travis gem
 [ -f /home/luke/.travis/travis.sh ] && source /home/luke/.travis/travis.sh
