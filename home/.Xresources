@@ -9,8 +9,8 @@ URxvt.iconFile:             /usr/share/icons/breeze/apps/software/yakuake.svg
 
 !URxvt.letterSpace: -1
 !URxvt.font:                 xft:Source Code Pro:size=12,-*-unifont-*-*-*-*-*-*-*-*-*-*-*-*,xft:Powerline Symbols,xft:Symbola
-URxvt.font:                 xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
-URxvt.letterSpace: -1
+!URxvt.font:                 xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+!URxvt.letterSpace: -1
 
 !URxvt.font: xft:inconsolata:size=13,\
 !            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
@@ -172,6 +172,9 @@ URxvt.scrollBar: false
 ! URxvt*scrollTtyOutput:                boolean
 ! URxvt*scrollTtyKeypress:              boolean
 ! URxvt*scrollWithBuffer:               boolean
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
 ! URxvt*inheritPixmap:                  boolean
 ! URxvt*transparent:                    boolean
 ! URxvt*tintColor:                      color

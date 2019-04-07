@@ -309,6 +309,8 @@ alias synoff="sudo systemctl stop synergys@erlacher"
 alias synstat="sudo systemctl status synergys@erlacher"
 alias pwssh="ssh -o 'PubkeyAuthentication no'"
 
+alias youtube-dl="youtube-dl -f 'bestvideo+bestaudio'"
+
 #npm
 export PATH=~/.npm-global/bin:$PATH
 
