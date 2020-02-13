@@ -35,3 +35,6 @@
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
+[credential]
+	helper = !/usr/lib/jvm/java-8-openjdk/jre/bin/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /home/erlacher/git/credman/git-credential-manager-2.0.4.jar
+	canFallBackToInsecureStore = true

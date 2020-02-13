@@ -38,7 +38,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fireplace'
 "Plugin 'guns/vim-sexp'
 "Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'xhr/vim-io'
+"Plugin 'xhr/vim-io'
 Plugin 'Leonidas-from-XIV/vim-coffee-script'
 
 " git
@@ -102,7 +102,7 @@ set guioptions-=T
 " Droid Sans Mono (Dotted if available)
 " DejaVu Sans Mono
 " whatever Monospace you got
-set guifont=Droid\ Sans\ Mono\ Dotted\ 11,Droid\ Sans\ Mono\ 11,DejaVu\ Sans\ Mono\ 11,Monospace\ 11
+"set guifont=Droid\ Sans\ Mono\ Dotted\ 11,Droid\ Sans\ Mono\ 11,DejaVu\ Sans\ Mono\ 11,Monospace\ 11
 
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif

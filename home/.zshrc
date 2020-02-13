@@ -272,22 +272,28 @@ prompt_gentoo_setup "$@"
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 alias rdesktop="rdesktop -a 16 -g 1920x1000"
 
+echo "ssh-agent-thing checking ssh-add"
 ssh-add -l > /dev/null </dev/null
 if [[ $? != 0 ]]; then
+	echo "ssh-agent-thing waiting for lock"
 	sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
 	while test -n "$(find $HOME -maxdepth 1 -name '.ssh-agent-lock*' -print -quit)" ; do
 		sleep "$(echo "$RANDOM % 100 * 0.01" | bc -q)"
 	done
 	locknum=$RANDOM
 	touch "$HOME/.ssh-agent-lock$locknum"
+	echo "ssh-agent-thing acquired lock"
 	pgrep ssh-agent > /dev/null
-	if [[ $? != 0  ]]; then
+	ssh_return=$?
+	echo "ssh-agent-thing checked pgrep, return: $ssh_return "
+	if [[ $ssh_return != 0 ]]; then
+		echo "ssh-agent-thing: Found no ssh-agent running"
 		setopt clobber
 		ssh-agent > $HOME/.ssh-agent-thing
 		eval $(<$HOME/.ssh-agent-thing)
 		setopt noclobber
-	elif [[ "$SSH_AGENT_PID" == "" ]]; then
-		echo "ssh-agent running but env not set, evaling ssh-agent-thing"
+	elif [ -f "$HOME/.ssh-agent-thing" ]; then
+		echo "ssh-agent-thing: ssh-agent running, evaling ssh-agent-thing"
 		eval $(<$HOME/.ssh-agent-thing)
 	else
 		echo "Cached SSH Agent PID: $SSH_AGENT_PID"
